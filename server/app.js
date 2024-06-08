@@ -14,6 +14,9 @@ app.use(
   })
 );
 
+console.log('>> This is a regular log statement');
+console.error('>> This is an error log statement');
+
 app.get('/', (req, res) => {
   res.send('Hello world!');
 })
