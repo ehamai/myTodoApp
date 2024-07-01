@@ -6,25 +6,25 @@ import Profile from './profile';
 import AuthenticationInstructionCard from './AuthenticationInstructionCard';
 import AuthorizationInstructionCard from './AuthorizationInstructionCard';
 import NextStepsInstructionCard from './NextStepsCard';
-import { ApplicationInsights } from "@microsoft/applicationinsights-web";
+// import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 
-var appInsights = new ApplicationInsights({
-  config: {
-    connectionString: "InstrumentationKey=80852485-e39b-4e76-ab0b-1dc89141d54e;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/;LiveEndpoint=https://westus2.livediagnostics.monitor.azure.com/;ApplicationId=7ad47b14-50c2-495e-9b85-040ced084e9e",
-   },
- });
- appInsights.loadAppInsights();
- const telemetryInitializer = (envelope: any) => {
-  envelope.tags["ai.cloud.role"] = "foobar";
- };
- appInsights.addTelemetryInitializer(telemetryInitializer);
- appInsights.trackPageView();
+// var appInsights = new ApplicationInsights({
+//   config: {
+//     connectionString: "InstrumentationKey=80852485-e39b-4e76-ab0b-1dc89141d54e;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/;LiveEndpoint=https://westus2.livediagnostics.monitor.azure.com/;ApplicationId=7ad47b14-50c2-495e-9b85-040ced084e9e",
+//    },
+//  });
+//  appInsights.loadAppInsights();
+//  const telemetryInitializer = (envelope: any) => {
+//   envelope.tags["ai.cloud.role"] = "app-perwmvr74pbfu";
+//  };
+//  appInsights.addTelemetryInitializer(telemetryInitializer);
+//  appInsights.trackPageView();
 
- let client = appInsights;
- client.trackEvent({name: "my custom event", properties: {customProperty: "custom property value"}});
- client.trackException({exception: new Error("handled exceptions can be logged with this method")});
- client.trackMetric({name: "custom metric", value: 3} as any);
- client.trackTrace({message: "trace message"});
+//  let client = appInsights;
+//  client.trackEvent({name: "my custom event", properties: {customProperty: "custom property value"}});
+//  client.trackException({exception: new Error("handled exceptions can be logged with this method")});
+//  client.trackMetric({name: "custom metric", value: 3} as any);
+//  client.trackTrace({message: "trace message"});
 
 console.log('Regular log statement without any app insights');
 console.error('Regular error statement without any app insights');
